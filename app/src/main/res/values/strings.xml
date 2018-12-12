@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Time logger</string>
+    <string name="edit_message">Enter a activity name</string>
+    <string name="startbutton">start</string>
+</resources>
