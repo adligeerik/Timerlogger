@@ -10,7 +10,7 @@
         android:id="@+id/textView"
         android:layout_width="112dp"
         android:layout_height="36dp"
-        android:layout_marginTop="116dp"
+        android:layout_marginTop="156dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -50,7 +50,8 @@
         android:id="@+id/counter"
         android:layout_width="66dp"
         android:layout_height="39dp"
+        android:layout_marginBottom="128dp"
+        app:layout_constraintBottom_toTopOf="@+id/startbutton"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        tools:layout_editor_absoluteY="43dp" />
+        app:layout_constraintRight_toRightOf="parent" />
 </android.support.constraint.ConstraintLayout>
