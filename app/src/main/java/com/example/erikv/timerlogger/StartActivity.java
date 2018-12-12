@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.Chronometer;
 import android.widget.TextView;
 
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -23,6 +24,7 @@ public class StartActivity extends AppCompatActivity {
     TextView timerdisplay;
     Button startbutton;
     Date currentTime;
+    String starttime;
 
     boolean iscounting = FALSE;
 
@@ -50,11 +52,16 @@ public class StartActivity extends AppCompatActivity {
             currentTime = Calendar.getInstance().getTime();
             simpleChronometer.setBase(SystemClock.elapsedRealtime());
             simpleChronometer.start();
-            timerdisplay.setText(String.valueOf(currentTime));
+            starttime = String.valueOf(currentTime).split(" ")[3];
+            timerdisplay.setText(starttime);
             startbutton.setText("STOP ACTIVITY");
             iscounting = TRUE;
         }
         else if(iscounting){
+            //Intent intent = new Intent(this, DisplayMessageActivity.class);
+
+            //String starttime = String.valueOf(currentTime);
+
             simpleChronometer.stop();
             startbutton.setText("START ACTIVITY");
             timerdisplay.setText("Start time");
