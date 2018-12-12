@@ -10,6 +10,9 @@ import android.widget.Button;
 import android.widget.Chronometer;
 import android.widget.TextView;
 
+import java.util.Calendar;
+import java.util.Date;
+
 import static android.provider.AlarmClock.EXTRA_MESSAGE;
 import static java.lang.Boolean.FALSE;
 import static java.lang.Boolean.TRUE;
@@ -19,6 +22,8 @@ public class StartActivity extends AppCompatActivity {
     Chronometer simpleChronometer;
     TextView timerdisplay;
     Button startbutton;
+    Date currentTime;
+
     boolean iscounting = FALSE;
 
 
@@ -42,8 +47,10 @@ public class StartActivity extends AppCompatActivity {
     /** Called when the user taps the Start activity button */
     public void startTiming(View view) {
         if (!iscounting){
+            currentTime = Calendar.getInstance().getTime();
             simpleChronometer.setBase(SystemClock.elapsedRealtime());
             simpleChronometer.start();
+            timerdisplay.setText(String.valueOf(currentTime));
             iscounting = TRUE;
         }
         else if(iscounting){
