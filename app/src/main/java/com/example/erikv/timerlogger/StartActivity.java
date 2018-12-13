@@ -10,9 +10,13 @@ import android.widget.Button;
 import android.widget.Chronometer;
 import android.widget.TextView;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Locale;
 
 import static android.provider.AlarmClock.EXTRA_MESSAGE;
 import static java.lang.Boolean.FALSE;
@@ -54,7 +58,18 @@ public class StartActivity extends AppCompatActivity {
             simpleChronometer.start();
             starttime = String.valueOf(currentTime).split(" ")[3];
             //long timestamp = Long.valueOf(Calendar.getInstance().getTime()) / 1000;
-            timerdisplay.setText(String.valueOf(System.currentTimeMillis() / 1000L));
+
+            String dateformat = DateFormat.getDateInstance().format(currentTime);
+            //DateFormat format = new SimpleDateFormat(dateformat, Locale.ENGLISH);
+
+            /**
+            try {
+                cal.setTime(format.parse(starttime));
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+             */
+            timerdisplay.setText(String.valueOf(currentTime));
             startbutton.setText("STOP ACTIVITY");
             iscounting = TRUE;
         }
