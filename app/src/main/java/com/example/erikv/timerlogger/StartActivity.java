@@ -53,14 +53,15 @@ public class StartActivity extends AppCompatActivity {
             simpleChronometer.setBase(SystemClock.elapsedRealtime());
             simpleChronometer.start();
             starttime = String.valueOf(currentTime).split(" ")[3];
-            timerdisplay.setText(starttime);
+            //long timestamp = Long.valueOf(Calendar.getInstance().getTime()) / 1000;
+            timerdisplay.setText(String.valueOf(System.currentTimeMillis() / 1000L));
             startbutton.setText("STOP ACTIVITY");
             iscounting = TRUE;
         }
         else if(iscounting){
-            //Intent intent = new Intent(this, DisplayMessageActivity.class);
-
-            //String starttime = String.valueOf(currentTime);
+            Intent intent = new Intent(this, AddNewActivity.class);
+            intent.putExtra(starttime,0);
+            startActivity(intent);
 
             simpleChronometer.stop();
             startbutton.setText("START ACTIVITY");
