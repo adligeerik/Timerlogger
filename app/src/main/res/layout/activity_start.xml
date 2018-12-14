@@ -34,7 +34,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="52dp"
         android:onClick="createNewCategory"
-        android:text="Create new activity"
+        android:text="Create new category"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/startbutton" />
