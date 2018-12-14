@@ -27,6 +27,7 @@ public class StartActivity extends AppCompatActivity {
     Chronometer simpleChronometer;
     TextView timerdisplay;
     Button startbutton;
+    Button createutton;
     Date currentTime;
     String starttime;
 
@@ -43,12 +44,19 @@ public class StartActivity extends AppCompatActivity {
 
     private void initparams(){
         timerdisplay = (TextView)findViewById(R.id.textView);
+
         startbutton = (Button)findViewById(R.id.startbutton);
+        createutton = (Button)findViewById(R.id.createactivitybutton);
+
         simpleChronometer = (Chronometer) findViewById(R.id.counter); // initiate a chronometer
-        //simpleChronometer.setFormat("Time Running - %s");
         simpleChronometer.stop();
     }
 
+    /** Called when the user taps the create new activity button */
+    public void createNewCategory(View view) {
+        Intent intentcreate = new Intent(this, CreateNewCategoryActivity.class);
+        startActivity(intentcreate);
+    }
 
     /** Called when the user taps the Start activity button */
     public void startTiming(View view) {
@@ -69,7 +77,7 @@ public class StartActivity extends AppCompatActivity {
                 e.printStackTrace();
             }
              */
-            timerdisplay.setText(String.valueOf(currentTime));
+            timerdisplay.setText(starttime);
             startbutton.setText("STOP ACTIVITY");
             iscounting = TRUE;
         }
