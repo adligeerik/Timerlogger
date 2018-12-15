@@ -11,13 +11,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="112dp"
+        android:onClick="addCategory"
         android:text="Add"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText" />
+        app:layout_constraintTop_toBottomOf="@+id/categoryName" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/categoryName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="136dp"
@@ -25,6 +26,17 @@
         android:inputType="textPersonName"
         android:text="New category"
         app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textviewtest"
+        android:layout_width="144dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="64dp"
+        android:text="TextView"
+        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
