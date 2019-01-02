@@ -3,6 +3,7 @@ package com.example.erikv.timerlogger;
 import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -19,6 +20,7 @@ import static java.lang.Boolean.TRUE;
 
 public class CreateNewCategoryActivity extends AppCompatActivity {
 
+    private static final String TAG = "bufferreader";
     String filename = "categories";
     FileOutputStream outputStream;
     @Override
@@ -47,8 +49,9 @@ public class CreateNewCategoryActivity extends AppCompatActivity {
         String line;
 
         try {
+            text.append("line5");
             BufferedReader bufferedreader = new BufferedReader(new FileReader(filename));
-
+            text.append("line4");
             while ((line = bufferedreader.readLine()) != null) {
                 //text.append(line);
                 //text.append('\n');
@@ -59,8 +62,8 @@ public class CreateNewCategoryActivity extends AppCompatActivity {
             bufferedreader.close();
 
         } catch (IOException e){
-            text.append("line4");
-            e.printStackTrace();
+
+            Log.d(TAG, "onClick", e);
         }
         text.append("line3");
         TextView textView = findViewById(R.id.textviewtest);
